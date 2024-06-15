@@ -1,20 +1,13 @@
 const express = require("express")
 const app = express()
-const mysql = require('mysql2')
 app.use(express.json())
-const PORT = 3000
 
+//Exportando la config en el archivo database
+const db = require('./config/database.js')
+
+const PORT = 3000
 //Decimos en que puerto levantamos el servidor
 app.listen(PORT, () => console.log (`Servidor levantado en el puerto ${PORT}`))
-
-const db = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'Marjorieanabel1997+',
-  database: 'expressSql'
-})
-
-db.connect()
 
 
 //Crear endpoint de base de datos
